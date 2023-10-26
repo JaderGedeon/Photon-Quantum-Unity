@@ -8,7 +8,7 @@ using Quantum.Game;
 namespace Quantum {
   public static class SystemSetup {
     public static SystemBase[] CreateSystems(RuntimeConfig gameConfig, SimulationConfig simulationConfig) {
-      return new SystemBase[] {
+            return new SystemBase[] {
         // pre-defined core systems
         //new Core.CullingSystem2D(), 
         new Core.CullingSystem3D(),
@@ -24,6 +24,7 @@ namespace Quantum {
 
         // user systems go here 
         new MovementSystem(),
+        new PlayerSpawnSystem(),
       };
     }
   }

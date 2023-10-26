@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Photon.Deterministic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,11 @@ namespace Quantum.Game
     {
         public override void Update(Frame f, ref Filter filter)
         {
-            var input = *f.GetPlayerInput(0);
+            Input input = default;
+            if (f.Unsafe.TryGetPointer(filter.Entity, out PlayerLink* playerLink))
+            {
+                input = *f.GetPlayerInput(playerLink->Player);
+            }
 
             filter.CharacterController->Move(f, filter.Entity, input.Direction.XOY);
         }

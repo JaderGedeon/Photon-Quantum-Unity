@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd8e95ae0daaec4496511105240e8a3, type: 3}
   m_Name: AssetResources
   m_EditorClassIdentifier: 
-  AddressablesGroup:
-    _resources: []
   AssetBundlesGroup:
     _resources: []
   ResourcesGroup:
@@ -43,11 +41,21 @@ MonoBehaviour:
         Id:
           Value: 5
       ResourcePath: DB/Configs/SimulationConfig
+    - Path: Resources/DB/Prefabs/PlayerCharacter|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 847175355922480276
+      ResourcePath: DB/Prefabs/PlayerCharacter
     - Path: Resources/DB/Map1_mesh
       AssetRef:
         Id:
           Value: 1090595483060781529
       ResourcePath: DB/Map1_mesh
+    - Path: Resources/DB/Prefabs/PlayerCharacter|EntityView
+      AssetRef:
+        Id:
+          Value: 1628752035557169803
+      ResourcePath: DB/Prefabs/PlayerCharacter
     - Path: Resources/DB/Map1
       AssetRef:
         Id:
