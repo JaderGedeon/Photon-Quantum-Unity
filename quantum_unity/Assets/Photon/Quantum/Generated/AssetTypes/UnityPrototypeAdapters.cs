@@ -6,6 +6,36 @@
 using System;
 namespace Quantum.Prototypes.Unity {
   [System.SerializableAttribute()]
+  [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.EntitySpawner))]
+  public class EntitySpawner_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.EntitySpawner_Prototype> {
+    [Quantum.Inspector.HideInInspectorAttribute()]
+    public Photon.Deterministic.RNGSession RNG;
+    [Quantum.Inspector.DynamicCollectionAttribute()]
+    [Quantum.LocalReference]
+    public global::EntityPrototype[] Spawned = System.Array.Empty<global::EntityPrototype>();
+    [Quantum.Inspector.HideInInspectorAttribute()]
+    public Photon.Deterministic.FP NextSpawn;
+    public Photon.Deterministic.FP SpawnRadius;
+    public Photon.Deterministic.FP SpawnIntervalMin;
+    public Photon.Deterministic.FP SpawnIntervalMax;
+    public Photon.Deterministic.FP MaxSpawnAmount;
+    [Quantum.Inspector.DynamicCollectionAttribute()]
+    public Quantum.AssetRefEntityPrototype[] EntityPrototypes = System.Array.Empty<Quantum.AssetRefEntityPrototype>();
+
+    public sealed override Quantum.Prototypes.EntitySpawner_Prototype Convert(EntityPrototypeConverter converter) {
+      var result = new Quantum.Prototypes.EntitySpawner_Prototype();
+      result.RNG = this.RNG;
+      result.Spawned = System.Array.ConvertAll(this.Spawned, x => { converter.Convert(x, out Quantum.MapEntityId tmp); return tmp; });
+      result.NextSpawn = this.NextSpawn;
+      result.SpawnRadius = this.SpawnRadius;
+      result.SpawnIntervalMin = this.SpawnIntervalMin;
+      result.SpawnIntervalMax = this.SpawnIntervalMax;
+      result.MaxSpawnAmount = this.MaxSpawnAmount;
+      result.EntityPrototypes = this.EntityPrototypes;
+      return result;
+    }
+  }
+  [System.SerializableAttribute()]
   [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.PhysicsJoints3D))]
   public class PhysicsJoints3D_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.PhysicsJoints3D_Prototype> {
     [Quantum.Inspector.DynamicCollectionAttribute()]

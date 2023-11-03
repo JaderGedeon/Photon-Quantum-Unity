@@ -51,6 +51,16 @@ MonoBehaviour:
         Id:
           Value: 1090595483060781529
       ResourcePath: DB/Map1_mesh
+    - Path: Resources/DB/Prefabs/Zombie|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 1532092516282316753
+      ResourcePath: DB/Prefabs/Zombie
+    - Path: Resources/DB/Prefabs/Zombie|EntityView
+      AssetRef:
+        Id:
+          Value: 1588992181308964260
+      ResourcePath: DB/Prefabs/Zombie
     - Path: Resources/DB/Prefabs/PlayerCharacter|EntityView
       AssetRef:
         Id:
@@ -61,3 +71,13 @@ MonoBehaviour:
         Id:
           Value: 1710471675203725834
       ResourcePath: DB/Map1
+    - Path: Resources/DB/Prefabs/Spawner|EntityView
+      AssetRef:
+        Id:
+          Value: 2032559472064843976
+      ResourcePath: DB/Prefabs/Spawner
+    - Path: Resources/DB/Prefabs/Spawner|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 2716757358633024501
+      ResourcePath: DB/Prefabs/Spawner

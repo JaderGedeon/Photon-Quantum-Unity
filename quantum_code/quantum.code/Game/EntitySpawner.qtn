@@ -1,0 +1,10 @@
+﻿component EntitySpawner {
+    [HideInInspector] RNGSession RNG;
+    list<EntityRef> Spawned;
+    [HideInInspector] FP NextSpawn;
+    FP SpawnRadius;
+    FP SpawnIntervalMin;
+    FP SpawnIntervalMax;
+    FP MaxSpawnAmount;
+    list<AssetRefEntityPrototype> EntityPrototypes;
+}
